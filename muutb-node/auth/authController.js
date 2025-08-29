@@ -9,7 +9,7 @@ export const registerUser = async (req, res) => {
         const {firstName, secondName, thirdName, phone, email, password } = req.body;
 
         //checking for two names
-        const providedNames =  [firstName, secondName, thirdName ].filter(boolean);
+        const providedNames =  [firstName, secondName, thirdName ].filter(Boolean);
         if (providedNames.length < 2) {
             return res.status(400).json({ error: "Ypu must provide at least two names."});
         }
